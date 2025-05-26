@@ -56,10 +56,6 @@ export default function App() {
       setIsEating(true);
       setFeedCount((prev) => prev + 1);
 
-      if (feedCount >= 3) {
-        setIsHappy(true);
-      }
-
       setTimeout(() => {
         setIsEating(false);
       }, 1500);
@@ -70,6 +66,12 @@ export default function App() {
     setDraggedFood(null);
     setDragPosition({ x: 0, y: 0 });
   };
+
+  useEffect(() => {
+    if (feedCount >= 3) {
+      setIsHappy(true);
+    }
+  }, [feedCount]);
 
   useEffect(() => {
     if (isDragging) {
@@ -194,8 +196,14 @@ export default function App() {
               </div>
             )}
 
+            {isHappy && !isEating && (
+              <div className="absolute top-[140px] left-[150px] bg-white text-[#33292b] text-sm px-3 py-3 rounded-xl shadow-md chat-bubble-persist z-20">
+                ini ada hadiah... ^^
+              </div>
+            )}
+
             {/* Gift Box - appears when isHappy is true */}
-            {isHappy && (
+            {isHappy && !isEating && (
               <div
                 className="absolute top-[275px] left-[65px] z-30 cursor-pointer group"
                 onClick={() => {
@@ -276,7 +284,7 @@ export default function App() {
                 </div>
 
                 {/* Eyes */}
-                {!isEating && (
+                {!isEating && !isHappy && (
                   <>
                     <div className="h-[30px] w-[30px] bg-[#d2873b] rounded-full absolute top-[30px] left-[30px]">
                       <div className="h-[24px] w-[24px] bg-[#262626] rounded-full absolute top-[3px] left-[3px]" />
@@ -296,6 +304,20 @@ export default function App() {
                     </div>
                     <div className="h-[30px] w-[30px] bg-[#d2873b] rounded-full absolute top-[30px] left-[90px]">
                       <div className="h-[24px] w-[44px] bg-[#33292b] absolute top-[-5px] left-[-3px]" />
+                      <div className="h-[24px] w-[24px] bg-[#33292b] rounded-full absolute top-[3px] left-[3px]" />
+                    </div>
+                  </>
+                )}
+
+                {/* Eyes is Happy */}
+                {isHappy && !isEating && (
+                  <>
+                    <div className="h-[30px] w-[30px] bg-[#d2873b] rounded-full absolute top-[30px] left-[30px]">
+                      <div className="h-[24px] w-[44px] bg-[#33292b] absolute top-[15px] left-[-3px]" />
+                      <div className="h-[24px] w-[24px] bg-[#33292b] rounded-full absolute top-[3px] left-[3px]" />
+                    </div>
+                    <div className="h-[30px] w-[30px] bg-[#d2873b] rounded-full absolute top-[30px] left-[90px]">
+                      <div className="h-[24px] w-[44px] bg-[#33292b] absolute top-[15px] left-[-3px]" />
                       <div className="h-[24px] w-[24px] bg-[#33292b] rounded-full absolute top-[3px] left-[3px]" />
                     </div>
                   </>
