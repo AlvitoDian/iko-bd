@@ -86,81 +86,81 @@ export default function App() {
   }, [isDragging, isNearMouth]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-200 to-green-200 p-8 select-none">
+    <div className="min-h-screen bg-gradient-to-b from-purple-100 via-white to-purple-50 p-8 select-none">
       {isOpenLetter && (
-        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-[909090] animate-fadeIn">
+        <div className="fixed inset-0 flex items-center justify-center z-[909090] animate-fadeIn bg-black/70 backdrop-blur">
           <div
-            className="bg-white p-8 rounded-2xl shadow-2xl max-w-md mx-4 relative border border-pink-200 animate-slideIn"
+            className="bg-white p-8 rounded-2xl shadow-2xl max-w-xl mx-4 relative border border-purple-200 animate-slideIn transition-all duration-300 ease-out
+                 animate-modalFadeIn"
             style={{
               backgroundImage: `
-           linear-gradient(to right, #fce4ec 1px, transparent 1px),
-           linear-gradient(to bottom, transparent 23px, #fce4ec 24px, #fce4ec 25px, transparent 26px)
-         `,
+         linear-gradient(to right, #f3e8ff 1px, transparent 1px),
+         linear-gradient(to bottom, transparent 23px, #f3e8ff 24px, #f3e8ff 25px, transparent 26px)
+       `,
               backgroundSize: "100% 32px, 100% 32px",
               backgroundPosition: "40px 0, 0 0",
             }}
           >
             {/* Paper hole punches */}
-            <div className="absolute left-6 top-8 w-3 h-3 bg-white border-2 border-pink-200 rounded-full"></div>
-            <div className="absolute left-6 top-20 w-3 h-3 bg-white border-2 border-pink-200 rounded-full"></div>
-            <div className="absolute left-6 top-32 w-3 h-3 bg-white border-2 border-pink-200 rounded-full"></div>
-            <div className="absolute left-6 top-44 w-3 h-3 bg-white border-2 border-pink-200 rounded-full"></div>
-            <div className="absolute left-6 top-56 w-3 h-3 bg-white border-2 border-pink-200 rounded-full"></div>
+            <div className="absolute left-6 top-8 w-3 h-3 bg-white border-2 border-purple-200 rounded-full"></div>
+            <div className="absolute left-6 top-20 w-3 h-3 bg-white border-2 border-purple-200 rounded-full"></div>
+            <div className="absolute left-6 top-32 w-3 h-3 bg-white border-2 border-purple-200 rounded-full"></div>
+            <div className="absolute left-6 top-44 w-3 h-3 bg-white border-2 border-purple-200 rounded-full"></div>
+            <div className="absolute left-6 top-56 w-3 h-3 bg-white border-2 border-purple-200 rounded-full"></div>
 
             {/* Red margin line */}
-            <div className="absolute left-10 top-0 bottom-0 w-px bg-pink-300"></div>
+            <div className="absolute left-10 top-0 bottom-0 w-px bg-purple-300"></div>
 
             {/* Close button */}
             <button
               onClick={() => setIsOpenLetter(false)}
-              className="absolute top-4 right-4 text-pink-400 hover:text-pink-600 text-2xl font-bold transition-colors duration-200 z-10"
+              className="absolute top-4 cursor-pointer right-4 text-purple-400 hover:text-purple-600 text-2xl font-bold transition-colors duration-200 z-10"
             >
               ×
             </button>
 
             {/* Letter content */}
             <div className="ml-8 relative z-10">
-              <h2 className="text-2xl font-bold text-gray-700 mb-6 font-serif text-center">
-                🎉 Happy Birthday! 🎂
-              </h2>
-
               <div className="text-gray-600 leading-loose space-y-4 font-serif text-base handwriting-style">
-                <p className="italic text-pink-500 border-b border-dotted border-pink-200 pb-1">
-                  My Dearest Love,
+                <p className="italic text-purple-500 border-b border-dotted border-purple-200 pb-1">
+                  Selamat ulang tahun Tifa,
                 </p>
 
-                <p className="border-b border-dotted border-pink-100 pb-1">
-                  Pada hari istimewa ini, aku ingin mengucapkan selamat ulang
-                  tahun untuk orang yang paling berarti dalam hidupku. ✨
+                <p className="border-b border-dotted border-purple-100 pb-1">
+                  Tepat hari ini kamu udah umur 18 dan makin dewasa yeyyy ^^
                 </p>
 
-                <p className="border-b border-dotted border-pink-100 pb-1">
-                  Setiap hari bersamamu adalah hadiah yang tak ternilai. Kamu
-                  membuat dunia ini lebih indah dengan senyumanmu. 😊
+                <p className="border-b border-dotted border-purple-100 pb-1">
+                  Semoga dengan bertambahnya usia, Tifa juga semakin bijak,
+                  kuat, dan bahagia dalam segala hal.
                 </p>
 
-                <p className="border-b border-dotted border-pink-100 pb-1">
-                  Semoga tahun ini membawa kebahagiaan, kesehatan, dan semua
-                  impianmu menjadi kenyataan. 🌟
+                <p className="border-b border-dotted border-purple-100 pb-1">
+                  Mungkin di hari ini aku ngucapin dalam keadaan kita yang
+                  kurang enak karena kesalahan yang aku buat kemarin. Tapi di
+                  balik semua itu, aku tetap sayang kamu, tetap peduli, dan
+                  tetap ingin jadi orang yang mengucapkan ulang tahun dengan
+                  cara spesial.
                 </p>
 
-                <p className="text-pink-500 font-bold text-center border-b border-dotted border-pink-200 pb-1">
-                  I love you more than words can say! 💕
+                <p className="border-b border-dotted border-purple-100 pb-1">
+                  Semoga di hari yang bertambahnya umur kamu ini juga merupakan
+                  hari yang baik buatmu, buat kita juga kuharap.
                 </p>
 
-                <div className="text-right mt-6 italic">
-                  <p className="border-b border-dotted border-pink-100 pb-1">
-                    With all my love,
-                  </p>
-                  <p className="font-bold text-pink-600 border-b border-dotted border-pink-200 pb-1 mt-2">
-                    Your Forever ❤️
-                  </p>
-                </div>
-              </div>
+                <p className="border-b border-dotted border-purple-100 pb-1">
+                  Aku cuma mau kamu tahu, betapa berharganya kamu buatku.
+                </p>
 
-              {/* Birthday cake emoji animation */}
-              <div className="mt-6 text-3xl animate-bounce text-center">
-                🎂🕯️✨
+                <p className="border-b border-dotted border-purple-100 pb-1">
+                  Selamat ulang tahun, Tifa. Maaf kalau belakangan aku bikin
+                  kamu kecewa... Tapi di hari spesialmu ini, aku cuma mau kamu
+                  bahagia.
+                </p>
+
+                <p className="text-purple-500 font-bold text-center border-b border-dotted border-purple-200 pb-1">
+                  Aku doain yang terbaik buat kamu selalu.
+                </p>
               </div>
             </div>
 
@@ -177,13 +177,14 @@ export default function App() {
       )}
 
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-4 text-gray-800">
-          🐱 Beri Makan Kucing
-        </h1>
-
+        <h3 className="text-2xl font-bold text-center mb-4 text-purple-800">
+          Beri Makan Kucing 3x, maka nanti dia akan memberimu Hadiah ^^
+        </h3>
         <div className="text-center mb-8">
-          <p className="text-lg text-gray-700">
-            Seret makanan ke mulut kucing! Sudah diberi makan: {feedCount} kali
+          <p className="text-lg text-purple-700">
+            {feedCount == 0
+              ? `Belum diberi makan`
+              : `Sudah diberi makan ${feedCount} kali`}
           </p>
         </div>
 
@@ -388,7 +389,9 @@ export default function App() {
                 <div className="text-6xl mb-2 hover:animate-bounce">
                   {food.emoji}
                 </div>
-                <p className="text-sm text-gray-700 font-medium">{food.name}</p>
+                <p className="text-sm text-purple-700 font-medium">
+                  {food.name}
+                </p>
               </div>
             </div>
           ))}
@@ -411,7 +414,7 @@ export default function App() {
         )}
 
         {/* Instructions */}
-        <div className="text-center mt-12 text-gray-600">
+        <div className="text-center mt-12 text-purple-600">
           <p className="text-lg">
             💡 Klik dan seret makanan ke mulut kucing untuk memberinya makan!
           </p>
@@ -419,21 +422,6 @@ export default function App() {
 
         {/* Eating Animation Indicator */}
       </div>
-
-      <style jsx>{`
-        @keyframes wag {
-          0%,
-          100% {
-            transform: rotate(12deg);
-          }
-          50% {
-            transform: rotate(60deg);
-          }
-        }
-        .animate-wag {
-          animation: wag 0.3s ease-in-out infinite;
-        }
-      `}</style>
     </div>
   );
 }
